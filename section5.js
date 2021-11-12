@@ -115,7 +115,7 @@ console.log(`All Animals: ${animals}\n`
 
 
 // splice - remove/replace elements
-// var arrDeletedItems = arrayName.splice(start[, deleteCount[, item1[, item2[, ...]]]])
+// arrayName.splice(startIdx, deleteCount, itemsToInsert);
 
 // insert something to animals array after shark
 
@@ -134,4 +134,32 @@ console.log(animals);
 animals.splice(0,2,'SHARK!', 'OCTOPUS!');
 console.log(animals);
 // replaces the first 2 with call caps versions
+
+
+// sort - sorts an array
+
+let people = ['Mrs. Robinson', 'Angie', 'Jolene', 'Maggie May', 'Roxanne'];
+console.log(people.sort());
+// sorts names alphabetically 
+
+let nums = [34, 10, 100000, 67, 99];
+console.log(nums.sort());
+// does not return in numeric order...it uses string character codes
+
+
+// VALUE TYPE VARIABLE
+
+let fruit = "orange";
+let color = fruit;
+
+fruit = "watermelon";
+console.log(fruit);
+console.log(color);
+
+
+// primitive types are stored as the actual value in a variable
+// arrays are different and references where the data is stored in memory
+
+
+// CONST
 
