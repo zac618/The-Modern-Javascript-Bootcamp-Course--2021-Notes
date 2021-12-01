@@ -80,3 +80,78 @@ only the first ones will be considered (rest is discarded).
 
 // // Just as before it is possible to make shallow copies of objects with spread
 
+/*
+REST
+rest collects several arguments into an array
+*/
+
+// The operator ... is also used.
+// Helpful for making function accepting unlimited parameters
+// */
+
+// // The old way uses the argument object
+// // Arguments is an object with this format:
+// // {0 : arg1, 1: arg2, 2: arg3, ...}
+// // Arguments won't work in arrow functions
+// function oldRestFunction(a, b) {
+//     // Its not necessary to declare a and b
+//     const argsArray = [...arguments]
+//     // The array will contain all arguments, including a and b
+//     console.log(argsArray)
+//     console.log(a)
+//     console.log(b)
+// }
+
+// oldRestFunction(1,2,3,23,4,2123,654,5426,7,8,543)
+
+// // New way uses ... operator
+// // Recommended way, it's faster and shorter
+// // Can be used in arrow functions
+// function newRestFunction(a, b, ...args) {
+//     console.log("first arg:", a)
+//     console.log("second arg:", b)
+//     console.log("the rest:", args)
+// }
+
+// newRestFunction(23,6,5,34,43,63,453,657,56,324,256,467,9,0,32346,162)
+
+/*
+DESTRUCTURING
+In a similar way as Python, values from an array can be destructured into
+several variables
+*/
+
+// const baseArray = ["Jock Jones", "Tommy Hogan", "Ibiza", "Ruffy", "Lou Goringa"]
+// const [firstName, secondName, , fourthName] = baseArray
+// console.log(firstName)
+// console.log(secondName)
+// console.log(fourthName)
+
+// // Note how the third name was skipped using commas
+// // Also note that unlike Python it is not necessary to consume entire the array
+
+// // This can also be done with objects
+
+// const runner = {
+//     first: "Eliud",
+//     last: "Kipchoge",
+//     country: "Kenya",
+//     title: "Some long honorific"
+// }
+
+// const {last, country, not_found} = runner;
+// console.log(last)
+// console.log(not_found) // Undefined
+// console.log(country)
+
+// // Note that here order is not important
+// // When done this way, if a key with the var name is not found,
+// // the value will be set to undefined
+// // The variable name may be set to something different using this syntax
+// //     key  : newVarName
+// const {title: honorific} = runner
+// console.log(honorific)
+
+// // It is possible to do nested destructuring by mixing {}s and []s
+// // It is possible to do destructuring in the parameters of a function def
+
